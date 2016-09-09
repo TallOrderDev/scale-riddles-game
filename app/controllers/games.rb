@@ -9,3 +9,5 @@ get '/games' do
   @balls[rand(0..11)].change_weight
   erb :'game_start'
 end
+
+

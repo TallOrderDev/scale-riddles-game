@@ -1,5 +1,5 @@
 class Scale < ActiveRecord::Base
-  has_many :balls
+  belongs_to :games
   before_create :set_default_count
 
   private
