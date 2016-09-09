@@ -4,6 +4,7 @@ class CreateScales < ActiveRecord::Migration
       t.string :name
       t.integer :count
       t.timestamps null: false
+      t.integer :game_id
     end
   end
 end
