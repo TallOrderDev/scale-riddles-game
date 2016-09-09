@@ -1,0 +1,64 @@
+.container {
+  margin: 20px auto;
+  width: 600px;
+  padding: 0px 20px 20px 20px;
+  border: 1px dotted black;
+}
+th {
+  text-align: left;
+}
+
+.body {
+  margin-left: 20px;
+}
+
+.title {
+
+ }
+
+ .button {
+  margin: 1px 3px;
+  border: solid black 1px;
+ }
+
+ .input {
+  margin: 3px 10px;
+ }
+
+ .errors {
+  color: red;
+  font-weight: bold;
+ }
+
+.scale {
+  min-width: 480px;
+  min-height: 480px;
+ }
+
+ .ball {
+  max-height: 60px;
+  max-width: 60px;
+ }
+
+ #balls-container {
+  margin-top: 10px;
+  border: 3px solid black;
+ }
+
+.scale-area {
+  width: 50%;
+  border: 2px dotted black;
+}
+
+.scale-area-container {
+  display: inline-flex;
+  width: 100%;
+}
+
+#count {
+  color: red;
+}
+/*
+ * {
+  border: red 1px solid;
+ }*/

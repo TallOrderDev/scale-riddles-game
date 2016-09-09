@@ -1,0 +1,23 @@
+<div class="container">
+  start of game<br>
+  <h3>You have <span id="count"><%= @scale.count %></span> more uses of the scales.</h3>
+  <h5>Click a Ball, and assign it to a side.</h5>
+  <h5>Then Click; </h5>
+  <form action=""><button>Weight</button></form>
+  <div class="scale-container">
+    <div class="center"><img class="scale" id="even" src="/scales/scale_even.png"></div>
+  </div>
+  <div class="scale-area-container">
+    <section class="scale-area" id="left-container">
+
+    </section>
+    <section class="scale-area" id="right-container">
+
+    </section>
+  </div>
+  <div id="balls-container">
+    <% @balls.each do |ball|  %>
+      <img class="ball" alt="<%= ball.number %>" id="ball-<%= ball.number %>" src="/pool_balls/ball-<%= ball.number %>.png">
+    <% end %>
+  </div>
+</div>
