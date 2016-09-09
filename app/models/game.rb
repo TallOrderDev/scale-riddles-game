@@ -1,3 +1,4 @@
 class Game < ActiveRecord::Base
-  # Remember to create a migration!
+  has_many :scales
+  has_many :balls
 end
