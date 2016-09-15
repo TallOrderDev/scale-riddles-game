@@ -1,5 +1,7 @@
 class Ball < ActiveRecord::Base
-  belongs_to :scale
+  belongs_to :game
+  has_one :scale, through: :game
+
   before_create :set_default_weight
 
   def change_weight_9
@@ -8,7 +10,7 @@ class Ball < ActiveRecord::Base
   end
 
   def change_weight_12
-    self.weight = [1, -1].sample
+    self.attributes = {weight: [1, -1].sample}
     self.save
   end
 

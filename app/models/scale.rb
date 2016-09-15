@@ -1,9 +1,5 @@
 class Scale < ActiveRecord::Base
-  belongs_to :games
-  before_create :set_default_count
+  belongs_to :game
+  has_many :balls, through: :games
 
-  private
-    def set_default_count
-      self.count = 3
-    end
 end

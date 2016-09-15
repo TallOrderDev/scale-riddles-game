@@ -58,6 +58,15 @@ th {
 #count {
   color: red;
 }
+#left-container {
+  background-color: blue;
+}
+
+#right-container {
+  background-color: red;
+}
+
+
 /*
  * {
   border: red 1px solid;
