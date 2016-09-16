@@ -1,0 +1,37 @@
+<% puts  %>
+<div class="player-box">
+  <iframe id="player" frameborder="0" height="100%" width="100%"
+    src="https://youtube.com/embed/<%= @results[:video] %>?enablejsapi=1&rel=0&autoplay=1&loop=1&controls=0&showinfo=0&autohide=1&playlist=<%= @results[:video] %>" volume="0">
+  </iframe>
+</div>
+<div class="cover">
+</div>
+
+<form class="button" id="reset-button" action="/"><button>Home</button></form>
+<div class="container" id="results">
+
+  <h3 class="results-text"><%= @results[:are_you] %></h3>
+
+  <div class="scale-area-container">
+    <div class="answers" id="correct-ball">
+      <img class="ball-big not"  id="<%= @results[:real_num] %>" src="/pool_balls/ball-<%= @results[:real_num] %>.png">
+    </div>
+
+    <div class="answers" id="correct-weight">
+      <h3><%= @results[:real_weight] %></h3>
+    </div>
+  </div>
+
+  <h4 class="results-text">Did you get it right?</h4>
+
+  <div class="scale-area-container">
+    <div class="answers user-answers" id="correct-ball">
+      <h3><%= @results[:num_correct] %></h3>
+    </div>
+
+    <div class="answers user-answers" id="correct-weight">
+     <h3><%= @results[:weight_correct] %></h3>
+    </div>
+  </div>
+</div>
+

@@ -1,13 +1,23 @@
+post '/games' do
+  @game = Game.create!
+  session[:game_id] = @game.id
+  redirect '/games'
+end
+
 get '/games' do
-  @scale = Scale.create(name: "scale")
-  @balls = []
-  num = 1
-  12.times do
-  @balls << Ball.new(scale: @scale, number: num.to_s)
-  num += 1
-  end
-  @balls[rand(0..11)].change_weight
+  @game = Game.find(session[:game_id])
+  @balls = @game.balls.sort_by &:id
   erb :'game_start'
 end
 
+put '/games' do
+  @game = Game.find(session[:game_id])
+  @game.weigh(params).to_json
+end
 
+get '/games/end' do
+  @game = Game.find(session[:game_id])
+  @results = @game.check_win_conditions(params)
+  puts @results
+  erb :'results'
+end
