@@ -13,9 +13,7 @@ var side = [
 function changeColorAndClass(e){
   var counter = counterCount(this)
   $(this).removeClass("left").removeClass("right").removeClass("not")
-  $(this).addClass(side[counter]).css({
-    "background-color": colors[(counter++)%colors.length]
-  })
+  $(this).addClass(side[counter]);
 } // functions collapsed
 
   function counterCount(ball){
@@ -44,20 +42,27 @@ function changeColorAndClass(e){
   };
 
 function weighScale(e){
-  var url, sides;
+  var url;
   e.preventDefault();
   url = '/games'
   data = {left: collectLeft(), right: collectRight()}
   $.ajax({
-      dataType: "json",
-      url: url,
-      data: data,
-      method: "PUT"
-    })
-  .done(function(response){
-    console.log(response)
+    dataType: "json",
+    url: url,
+    data: data,
+    method: "PUT"
   })
+    .done(handleResponse)
 } // functions collapsed
+
+  function handleResponse(response){
+    $("#count").text(response.count)
+    $(".scale").replaceWith(response.image)
+    if(response.gameOver){
+      $("#game-data").empty().append(response.gameOver)
+      $("#weigh-button").hide()
+    }
+  }
 
   function collectLeft(){
     var left = []

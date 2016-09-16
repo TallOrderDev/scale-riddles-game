@@ -31,6 +31,7 @@ th {
  }
 
 .scale {
+  margin: 0px 55px 0px 55px;
   min-width: 480px;
   min-height: 480px;
  }
@@ -65,7 +66,26 @@ th {
 #right-container {
   background-color: red;
 }
+.left{
+  background-color: blue;
+}
+.right {
+  background-color: red;
+}
+.not{
+  background-color: white;
+}
 
+#weigh-button {
+  float: left;
+}
+#guess-button {
+  float: left;
+}
+
+#reset-button {
+  float: right;
+}
 
 /*
  * {
