@@ -16,5 +16,8 @@ put '/games' do
 end
 
 get '/games/end' do
-  "Hello World"
+  @game = Game.find(session[:game_id])
+  @results = @game.check_win_conditions(params)
+  puts @results
+  erb :'results'
 end

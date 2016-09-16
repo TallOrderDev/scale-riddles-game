@@ -1,3 +1,10 @@
+<div class="player-box">
+  <iframe id="player" frameborder="0" height="100%" width="100%"
+    src="https://youtube.com/embed/Gy5PC5Auoak?enablejsapi=1&rel=0&autoplay=1&loop=1&controls=0&showinfo=0&autohide=1&playlist=Gy5PC5Auoak" volume="0">
+  </iframe>
+</div>
+<div class="cover">
+</div>
 <div class="container">
   <div id="game-data">
     <h3>You have <span id="count"><%= @game.weigh_count %></span> more uses of the scales.</h3>
@@ -5,7 +12,7 @@
     <h5>Then Click; </h5>
   </div>
   <form class="button" id="weigh-button" action=""><button>Weight</button></form>
-  <form class="button" id="reset-button" action=""><button>Reset</button></form>
+  <form class="button" id="reset-button" method="POST" action="/games"><button>Reset</button></form>
   <div class="scale-container">
     <div class="center"><img class="scale" id="even" src="/scales/scale_even.png"></div>
   </div>

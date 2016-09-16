@@ -1,6 +1,17 @@
 <div class="container">
-  hello from index
-  <form action="/games" method="POST">
-    <button type="submit">Start A New Game</button>
-  </form>
+  <div>
+    <form action="/games" method="POST">
+      <input type="hidden" value="9" name="game[balls]" />
+      <button class="button" value="9" type="submit">Start A 9 Ball Game</button>
+    </form>
+    <p>There are 9 balls, one weighs more. You can use the scale 2 times to find out which is different. </p>
+  </div>
+  <hr>
+  <div>
+    <form action="/games" method="POST">
+      <input type="hidden" value="12" name="game[balls]" />
+      <button class="button" type="submit">Start A 12 Ball Game</button>
+    </form>
+    <p>There are 12 balls, one weighs different. You can use the scale 3 times to find out which is different, and say if it's lighter or heavier. </p>
+  </div>
 </div>

@@ -1,16 +1,10 @@
-var colors = [
-  "blue",
-  "red",
-  "white"
-];
-
 var side = [
   "left",
   "right",
   "not"
 ];
 
-function changeColorAndClass(e){
+function changeClass(e){
   var counter = counterCount(this)
   $(this).removeClass("left").removeClass("right").removeClass("not")
   $(this).addClass(side[counter]);
@@ -23,7 +17,7 @@ function changeColorAndClass(e){
     else if(checkLeft(ballClass)){num = 1}
     else if(checkRight(ballClass)){num= 2};
     return num
-  }; // functions collapsed
+  };
 
   function checkLeft(ballClass){
     var substring = "left";
@@ -42,7 +36,7 @@ function changeColorAndClass(e){
   };
 
 function weighScale(e){
-  var url;
+  var url, data;
   e.preventDefault();
   url = '/games'
   data = {left: collectLeft(), right: collectRight()}
@@ -54,6 +48,14 @@ function weighScale(e){
   })
     .done(handleResponse)
 } // functions collapsed
+  function ajaxWeighCall() {
+    $.ajax({
+    dataType: "json",
+    url: url,
+    data: data,
+    method: "PUT"
+  })
+  }
 
   function handleResponse(response){
     $("#count").text(response.count)
@@ -80,8 +82,7 @@ function weighScale(e){
     return right
   };
 
-
 $(document).ready(function() {
-  $('.ball').click(changeColorAndClass);
+  $('.ball').click(changeClass);
   $("#weigh-button").submit(weighScale);
 });
